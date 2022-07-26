@@ -2,6 +2,26 @@
 # Components Card
 --------------------------------------------------------------*/
 .card {
-  .card-course {
+  &.card-course {
+    background-color: $light-gray;
+    border: none;
+    height: 100%;
+    padding: 1.2rem;
+    justify-content: space-between;
+    border-radius: 0.4rem;
+    .card-header,
+    .card-footer {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+    }
+
+    .card-header {
+      padding-bottom: 1.2rem;
+    }
+    .card-footer {
+      padding-top: 1.2rem;
+      border-top: solid 1px $border-color;
+    }
   }
 }

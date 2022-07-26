@@ -24,18 +24,27 @@ h6 {
 
   &.title-course {
     // text-transform: uppercase;
-    font-size: 1.875rem;
-    line-height: 1.4;
+    font-size: 1.075rem;
+    line-height: 1.2;
     font-weight: $fw-bold;
+    color: $dark-primary;
+  }
+}
 
-    &.title-icon {
-      span {
-        display: flex;
-        align-items: center;
-        margin-bottom: 0.5rem;
-        .ico {
-          margin-right: 0.5rem;
-        }
+.price-text {
+  small {
+    font-size: 0.875rem;
+    color: $text-color;
+    + span {
+      color: $dark-primary;
+      display: block;
+      font-size: 1.475rem;
+      font-weight: $fw-bold;
+      margin-top: 0.2rem;
+      small {
+        font-size: 0.755rem;
+        font-weight: $fw-light;
+        color: $dark-primary;
       }
     }
   }
