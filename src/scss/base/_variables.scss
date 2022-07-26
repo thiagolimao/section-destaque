@@ -1,0 +1,35 @@
+// General Colors
+$white: #ffffff;
+$gray: #464646;
+$border-color: #d1d1d1;
+
+/// Default color variables
+$primary: #00b495;
+$dark-primary: #00796a;
+
+$heading-color: #636466;
+$text-color: #949499;
+$nav-link: #636466;
+
+/// Fonts Variables
+$font-primary: "Mulish", sans-serif;
+$font-secondary: "Roboto", sans-serif;
+$font-extra: "Orelega One", sans-serif;
+
+$font-default: $font-primary;
+$heading-font: $font-default;
+$text-font: $font-default;
+
+/// Fonts weight
+$fw-xlight: 200;
+$fw-light: 300;
+$fw-regular: 400;
+$fw-normal: 400;
+$fw-medium: 500;
+$fw-semi: 600;
+$fw-bold: 700;
+$fw-xbold: 800;
+$fw-black: 900;
+
+/// userSpaceOnUse
+$pad-space: 5rem;

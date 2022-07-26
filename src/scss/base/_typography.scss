@@ -1,0 +1,42 @@
+/*--------------------------------------------------------------
+# Base Typography
+--------------------------------------------------------------*/
+body {
+  font-family: $font-default;
+  color: $text-color;
+}
+
+body,
+input,
+select,
+textarea {
+  font-family: $font-default;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font;
+  color: $heading-color;
+
+  &.title-type01 {
+    // text-transform: uppercase;
+    font-size: 1.875rem;
+    line-height: 1.4;
+    font-weight: $fw-bold;
+
+    &.title-icon {
+      span {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5rem;
+        .ico {
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
+}

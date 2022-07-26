@@ -1,0 +1,33 @@
+/*--------------------------------------------------------------
+# Components Button
+--------------------------------------------------------------*/
+.btn {
+  font-weight: $fw-bold;
+  letter-spacing: 0;
+  border-width: 2px;
+
+  font-size: 13px;
+  padding: 0.5rem 0;
+
+  text-decoration: none;
+
+  &.btn-primary {
+    background-color: $primary;
+    border-color: $primary;
+    color: $white;
+    border-radius: 8px;
+
+    &:hover,
+    &:active,
+    &:not(:disabled):not(.disabled):active {
+      background-color: $white;
+      border-color: $primary;
+      color: $primary;
+    }
+
+    &:focus,
+    &:active {
+      box-shadow: 0 0 0 0.2rem rgba($primary, 25%);
+    }
+  }
+}
