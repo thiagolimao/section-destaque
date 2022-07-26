@@ -9,8 +9,12 @@
     padding: 1.2rem;
     justify-content: space-between;
     border-radius: 0.4rem;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
     .card-header,
-    .card-footer {
+    .card-body {
       background-color: transparent;
       border: none;
       padding: 0;
@@ -19,9 +23,41 @@
     .card-header {
       padding-bottom: 1.2rem;
     }
-    .card-footer {
+    .card-body {
       padding-top: 1.2rem;
       border-top: solid 1px $border-color;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-direction: row;
+      .price-discont {
+        margin-top: 0.2rem;
+      }
+    }
+
+    .card-footer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba($dark-primary, 0.8);
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+      z-index: -1;
+      transition: all 0.5s ease-in-out;
+      .btn {
+        padding: 0.5rem 1rem;
+      }
+    }
+
+    &:hover {
+      .card-footer {
+        z-index: 1;
+      }
     }
   }
 }

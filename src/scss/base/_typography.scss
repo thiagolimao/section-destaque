@@ -49,3 +49,16 @@ h6 {
     }
   }
 }
+
+.price-discont {
+  background-color: $white;
+  color: $primary;
+  font-weight: $fw-bold;
+  font-size: 0.775rem;
+  padding: 0.2rem;
+  border-radius: 0.2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.175rem;
+}

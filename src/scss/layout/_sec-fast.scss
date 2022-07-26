@@ -6,4 +6,32 @@
     margin-top: 15px;
     margin-bottom: 15px;
   }
+
+  header {
+    padding: 1.2rem 0;
+    .title-default {
+      font-size: 1.175rem;
+      line-height: 1.2;
+      font-weight: $fw-normal;
+      color: $dark-primary;
+      margin-bottom: 1.575rem;
+      strong {
+        display: block;
+        font-weight: $fw-xbold;
+        font-size: 1.675rem;
+        text-transform: uppercase;
+      }
+      &:before {
+        background-color: $primary;
+        margin-bottom: 1.2rem;
+      }
+
+      + p {
+        margin-bottom: 0;
+        font-size: 1.055rem;
+        color: $text-color;
+        line-height: 1.2;
+      }
+    }
+  }
 }
