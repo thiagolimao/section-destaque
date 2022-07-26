@@ -22,7 +22,6 @@
         text-transform: uppercase;
       }
       &:before {
-        background-color: $primary;
         margin-bottom: 1.2rem;
       }
 
@@ -34,4 +33,35 @@
       }
     }
   }
+  .desktop-content {
+    @media (max-width: 992px) {
+      display: none;
+    }
+  }
+
+  .mobile-content {
+    @media (min-width: 992px) {
+      display: none;
+    }
+    .card-course {
+      .card-footer {
+        position: initial;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        padding: 1.2rem 0 0;
+        z-index: initial;
+      }
+    }
+  }
 }
+
+// @media (max-width: 1200px) {
+// }
+// @media (max-width: 992px) {
+// }
+// @media (max-width: 768px) {
+// }
+
+// @media (max-width: 576px) {
+// }

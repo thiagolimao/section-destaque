@@ -30,12 +30,14 @@
       align-items: flex-start;
       justify-content: space-between;
       flex-direction: row;
+      flex: initial;
       .price-discont {
         margin-top: 0.2rem;
       }
     }
 
     .card-footer {
+      border: none;
       position: absolute;
       top: 0;
       left: 0;
@@ -44,19 +46,25 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: rgba($dark-primary, 0.8);
       padding-left: 2.5rem;
       padding-right: 2.5rem;
       z-index: -1;
-      transition: all 0.5s ease-in-out;
-      .btn {
-        padding: 0.5rem 1rem;
-      }
+      transition: 0.25s ease background;
+      background-color: transparent;
+      border-radius: 0.4rem;
+      //   .btn {
+      //     padding: 0.5rem 1rem;
+      //   }
     }
 
     &:hover {
+      .card-header,
+      .card-body {
+        opacity: 0.1;
+      }
       .card-footer {
         z-index: 1;
+        background: rgba($dark-primary, 0.8);
       }
     }
   }
