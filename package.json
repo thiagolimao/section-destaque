@@ -1,5 +1,5 @@
 {
-    "name": "Bloco_de_cursos",
+    "name": "destaque_de_cursos",
     "title": "Lorem ipsum",
     "version": "2.0.0",
     "description": "project_description",
@@ -33,6 +33,7 @@
         "gulp-nunjucks": "^5.0.1",
         "gulp-rename": "^2.0.0",
         "gulp-sass": "^5.0.0",
+        "gulp-stylus": "^2.7.1",
         "merge-stream": "^2.0.0",
         "node-sass": "^7.0.1",
         "sass": "^1.43.4"

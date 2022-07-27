@@ -6,9 +6,10 @@ const beautify = require('gulp-beautify');
 const browserSync = require("browser-sync").create();
 const del = require('del');
 const gulp = require('gulp');
+const stylus = require('gulp-stylus');
 const mergeStream = require('merge-stream');
 const nunjucks = require('gulp-nunjucks');
-const sass = require('gulp-sass')(require('sass'));
+// const sass = require('gulp-sass')(require('sass'));
 const inject = require('gulp-inject-string');
 const os = require('os');
 const cleanCSS = require('gulp-clean-css');
@@ -76,16 +77,24 @@ function compileHTML() {
 }
 
 // Task: Compile SCSS
-function compileSCSS() {
-    return gulp.src('./src/scss/**/*.scss')
-        .pipe(sass({
-            outputStyle: 'expanded',
-        }))
-        .on("error", sass.logError)
-        .pipe(autoprefixer({
-            cascade: false
-        }))
-        .pipe(inject.prepend('/**' + os.EOL + credits.join(os.EOL) + os.EOL + '*/' + os.EOL + os.EOL))
+// function compileSCSS() {
+//     return gulp.src('./src/scss/**/*.scss')
+//         .pipe(sass({
+//             outputStyle: 'expanded',
+//         }))
+//         .on("error", sass.logError)
+//         .pipe(autoprefixer({
+//             cascade: false
+//         }))
+//         .pipe(inject.prepend('/**' + os.EOL + credits.join(os.EOL) + os.EOL + '*/' + os.EOL + os.EOL))
+//         .pipe(gulp.dest(distDir + 'assets/css'))
+//         .pipe(browserSync.stream());
+// }
+
+// Task: Compile STYL
+function compileSTYL() {
+    return gulp.src('./src/styl/**/*.styl')
+        .pipe(stylus())
         .pipe(gulp.dest(distDir + 'assets/css'))
         .pipe(browserSync.stream());
 }
@@ -147,7 +156,7 @@ function initBrowserSync(done) {
 function watchFiles() {
     gulp.watch(['./src/assets/**/*', '!./src/assets/js/main.js'], copyFiles);
 
-    gulp.watch('./src/scss/**/*', compileSCSS);
+    gulp.watch('./src/scss/**/*', compileSTYL);
     gulp.watch('./src/**/*.html', compileHTML);
     gulp.watch('./src/assets/js/main.js', compileJS);
 
@@ -156,7 +165,7 @@ function watchFiles() {
 }
 
 // Export tasks
-const dist = gulp.series(clean, [copyFiles, compileHTML, compileSCSS, compileJS], [minifyCSS, minifyJS], copyDependencies);
+const dist = gulp.series(clean, [copyFiles, compileHTML, compileSTYL, compileJS], [minifyCSS, minifyJS], copyDependencies);
 
 exports.watch = gulp.series(dist, watchFiles);
 exports.start = gulp.series(dist, gulp.parallel(watchFiles, initBrowserSync));
