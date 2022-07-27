@@ -41,6 +41,9 @@ h6 {
       font-size: 1.475rem;
       font-weight: $fw-bold;
       margin-top: 0.2rem;
+      @media (min-width: 992px) and (max-width: 1200px) {
+        font-size: 1.275rem;
+      }
       small {
         font-size: 0.755rem;
         font-weight: $fw-light;
