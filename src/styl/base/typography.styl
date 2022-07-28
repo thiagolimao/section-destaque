@@ -4,11 +4,6 @@
 body
   font-family: $font-default
   color: $text-color
-body,
-input,
-select,
-textarea
-  font-family: $font-default
 h1,
 h2,
 h3,
@@ -18,35 +13,52 @@ h6
   font-family: $heading-font
   color: $heading-color
   &.title-course
-    // text-transform: uppercase;
-    font-size: 1.075rem
+    font-size: 1.8rem
     line-height: 1.2
     font-weight: $fw-bold
-    color: $dark-primary
+    color: $secondary
+    @media (min-width: 992px) and (max-width: 1200px)
+        font-size: 1.5rem
 .price-text
   small
-    font-size: 0.875rem
+    font-size: 1.475rem
     color: $text-color
+    @media (min-width: 992px) and (max-width: 1200px)
+      font-size: 1.3rem
     + span
-      color: $dark-primary
+      color: $secondary
       display: block
-      font-size: 1.475rem
+      font-size: 2.5rem
       font-weight: $fw-bold
       margin-top: 0.2rem
       @media (min-width: 992px) and (max-width: 1200px)
-        font-size: 1.275rem
+        font-size: 2.2rem
       small
-        font-size: 0.755rem
+        font-size: 1.2rem
         font-weight: $fw-light
-        color: $dark-primary
-.price-discont
-  background-color: $white
-  color: $primary
-  font-weight: $fw-bold
-  font-size: 0.775rem
-  padding: 0.2rem
-  border-radius: 0.2rem
-  display: flex
-  flex-direction: row
-  align-items: center
-  gap: 0.175rem
+        color: $secondary
+.title-default
+  font-size: 1.8rem
+  line-height: 1.2
+  font-weight: $fw-normal
+  color: $secondary
+  margin-bottom: 1.575rem
+  @media (min-width: 992px) and (max-width: 1200px)
+    font-size: 1.4rem
+    margin-bottom: 1.275rem
+  strong
+    display: block
+    font-weight: $fw-xbold
+    font-size: 2.5rem
+    text-transform: uppercase
+    @media (min-width: 992px) and (max-width: 1200px)
+      font-size: 2rem
+    &:before
+      margin-bottom: 1.2rem
+  + p
+    margin-bottom: 0
+    font-size: 1.675rem
+    color: $text-color
+    line-height: 1.2
+    @media (min-width: 992px) and (max-width: 1200px)
+      font-size: 1.3rem
