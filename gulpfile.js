@@ -1,19 +1,21 @@
 "use strict";
 
 // Load Plugins
-const autoprefixer = require('gulp-autoprefixer');
 const beautify = require('gulp-beautify');
 const browserSync = require("browser-sync").create();
 const del = require('del');
 const gulp = require('gulp');
+const rupture = require('rupture');
+const stylus = require('gulp-stylus');
+const autoprefix = require('gulp-autoprefixer');
 const mergeStream = require('merge-stream');
 const nunjucks = require('gulp-nunjucks');
-const sass = require('gulp-sass')(require('sass'));
 const inject = require('gulp-inject-string');
 const os = require('os');
 const cleanCSS = require('gulp-clean-css');
 const minify = require("gulp-minify");
 const rename = require('gulp-rename');
+const jeet = require('jeet');
 
 const pkg = require('./package.json');
 const dependencies = require('./dependencies.json');
@@ -75,17 +77,15 @@ function compileHTML() {
         .pipe(browserSync.stream());
 }
 
-// Task: Compile SCSS
-function compileSCSS() {
-    return gulp.src('./src/scss/**/*.scss')
-        .pipe(sass({
-            outputStyle: 'expanded',
+// Task: Compile STYL
+function compileSTYL() {
+    return gulp.src('./src/styl/**/*.styl')
+        .pipe(stylus({
+            use: jeet(),
+            use: rupture(),
+            compress: true
         }))
-        .on("error", sass.logError)
-        .pipe(autoprefixer({
-            cascade: false
-        }))
-        .pipe(inject.prepend('/**' + os.EOL + credits.join(os.EOL) + os.EOL + '*/' + os.EOL + os.EOL))
+        .pipe(autoprefix('last 2 versions'))
         .pipe(gulp.dest(distDir + 'assets/css'))
         .pipe(browserSync.stream());
 }
@@ -147,7 +147,7 @@ function initBrowserSync(done) {
 function watchFiles() {
     gulp.watch(['./src/assets/**/*', '!./src/assets/js/main.js'], copyFiles);
 
-    gulp.watch('./src/scss/**/*', compileSCSS);
+    gulp.watch('./src/styl/**/*', compileSTYL);
     gulp.watch('./src/**/*.html', compileHTML);
     gulp.watch('./src/assets/js/main.js', compileJS);
 
@@ -156,7 +156,7 @@ function watchFiles() {
 }
 
 // Export tasks
-const dist = gulp.series(clean, [copyFiles, compileHTML, compileSCSS, compileJS], [minifyCSS, minifyJS], copyDependencies);
+const dist = gulp.series(clean, [copyFiles, compileHTML, compileSTYL, compileJS], [minifyCSS, minifyJS], copyDependencies);
 
 exports.watch = gulp.series(dist, watchFiles);
 exports.start = gulp.series(dist, gulp.parallel(watchFiles, initBrowserSync));

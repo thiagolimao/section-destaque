@@ -1,0 +1,64 @@
+/*--------------------------------------------------------------
+# Base Typography
+--------------------------------------------------------------*/
+body
+  font-family: $font-default
+  color: $text-color
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  font-family: $heading-font
+  color: $heading-color
+  &.title-course
+    font-size: 1.8rem
+    line-height: 1.2
+    font-weight: $fw-bold
+    color: $secondary
+    @media (min-width: 992px) and (max-width: 1200px)
+        font-size: 1.5rem
+.price-text
+  small
+    font-size: 1.475rem
+    color: $text-color
+    @media (min-width: 992px) and (max-width: 1200px)
+      font-size: 1.3rem
+    + span
+      color: $secondary
+      display: block
+      font-size: 2.5rem
+      font-weight: $fw-bold
+      margin-top: 0.2rem
+      @media (min-width: 992px) and (max-width: 1200px)
+        font-size: 2.2rem
+      small
+        font-size: 1.2rem
+        font-weight: $fw-light
+        color: $secondary
+.title-default
+  font-size: 1.8rem
+  line-height: 1.2
+  font-weight: $fw-normal
+  color: $secondary
+  margin-bottom: 1.575rem
+  @media (min-width: 992px) and (max-width: 1200px)
+    font-size: 1.4rem
+    margin-bottom: 1.275rem
+  strong
+    display: block
+    font-weight: $fw-xbold
+    font-size: 2.5rem
+    text-transform: uppercase
+    @media (min-width: 992px) and (max-width: 1200px)
+      font-size: 2rem
+    &:before
+      margin-bottom: 1.2rem
+  + p
+    margin-bottom: 0
+    font-size: 1.675rem
+    color: $text-color
+    line-height: 1.2
+    @media (min-width: 992px) and (max-width: 1200px)
+      font-size: 1.3rem
