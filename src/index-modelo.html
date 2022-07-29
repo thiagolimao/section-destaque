@@ -1,0 +1,77 @@
+{% extends "template.html" %}
+
+{% set page ='home' %}
+
+{% block meta %}
+<title>lorem_title</title>
+{% endblock %}
+
+{% block content %}
+
+<section class="section home-top sec-fast">
+    <div class="container desktop-content">
+        <div class="box-default box-default--white">
+            <div class="row">
+                <div class="col-12 col-md-3 col-xl-3">
+                    <header>
+                        <h2 class="title-default">
+                            Processo seletivo presencial.
+                            <strong>
+                                Vagas abertas!
+                            </strong>
+                        </h2>
+                        <p>
+                            Clique no curso de seu interesse ao lado e inscreva-se.
+                        </p>
+                    </header>
+                </div><!-- /col -->
+
+                <div class="col-12 col-md-3 col-xl-3">
+                    {% include "parts/components/parts/card-course.html" %}
+                </div><!-- /col -->
+
+                <div class="col-12 col-md-3 col-xl-3">
+                    {% include "parts/components/parts/card-course.html" %}
+                </div><!-- /col -->
+
+                <div class="col-12 col-md-3 col-xl-3">
+                    {% include "parts/components/parts/card-course.html" %}
+                </div><!-- /col -->
+
+                <div class="col-12 col-md-3 col-xl-3">
+                    {% include "parts/components/parts/card-course.html" %}
+                </div><!-- /col -->
+
+                <div class="col-12 col-md-3 col-xl-3">
+                    {% include "parts/components/parts/card-course.html" %}
+                </div><!-- /col -->
+
+                <div class="col-12 col-md-3 col-xl-3">
+                    {% include "parts/components/parts/card-course.html" %}
+                </div><!-- /col -->
+
+                <div class="col-12 col-md-3 col-xl-3">
+                    {% include "parts/components/parts/card-course.html" %}
+                </div><!-- /col -->
+            </div><!-- /row -->
+        </div><!-- /box-default--white -->
+    </div><!-- /container -->
+
+    <div class="mobile-content">
+        <header>
+            <h2 class="title-default">
+                Processo seletivo presencial.
+                <strong>
+                    Vagas abertas!
+                </strong>
+            </h2>
+            <p>
+                Clique no curso de seu interesse abaixo e inscreva-se.
+            </p>
+        </header>
+
+        {% include "parts/components/infinity-courses.html" %}
+    </div><!-- /mobile-content -->
+</section><!-- End  home-top -->
+
+{% endblock %}
